@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanTech Blog - Waste Management Insights</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            transition: background 0.3s;
+        }
+        
+        .nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: white;
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .blog-title {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌱 CleanTech Blog</h1>
+        <p>Insights on AI-Powered Waste Management</p>
+    </div>
+    
+    <div class="nav">
+        <a href="/">🏠 Home</a>
+        <a href="/blog">📝 Blog</a>
+        <a href="/portfolio-details">💼 Portfolio</a>
+    </div>
+    
+    <div class="container">
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">🤖</div>
+                <div class="blog-content">
+                    <div class="blog-date">December 30, 2024</div>
+                    <h3 class="blog-title">AI Revolution in Waste Management</h3>
+                    <p class="blog-excerpt">Discover how artificial intelligence and machine learning are transforming the way we sort, process, and manage waste in smart cities worldwide.</p>
+                    <a href="/blog-single" class="read-more">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-image">♻️</div>
+                <div class="blog-content">
+                    <div class="blog-date">December 28, 2024</div>
+                    <h3 class="blog-title">Transfer Learning for Waste Classification</h3>
+                    <p class="blog-excerpt">Learn how we leverage VGG16 and transfer learning techniques to achieve high accuracy in waste type classification with minimal training data.</p>
+                    <a href="/blog-single" class="read-more">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-image">🌍</div>
+                <div class="blog-content">
+                    <div class="blog-date">December 25, 2024</div>
+                    <h3 class="blog-title">Sustainable Future with Smart Sorting</h3>
+                    <p class="blog-excerpt">Exploring the environmental impact of automated waste sorting systems and their role in creating a circular economy.</p>
+                    <a href="/blog-single" class="read-more">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-image">📊</div>
+                <div class="blog-content">
+                    <div class="blog-date">December 22, 2024</div>
+                    <h3 class="blog-title">Deep Learning Models Comparison</h3>
+                    <p class="blog-excerpt">A comprehensive analysis of different CNN architectures for waste image classification and their performance metrics.</p>
+                    <a href="/blog-single" class="read-more">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-image">🏭</div>
+                <div class="blog-content">
+                    <div class="blog-date">December 20, 2024</div>
+                    <h3 class="blog-title">Industrial Implementation Guide</h3>
+                    <p class="blog-excerpt">Step-by-step guide for implementing AI waste classification systems in industrial recycling facilities and waste management centers.</p>
+                    <a href="/blog-single" class="read-more">Read More →</a>
+                </div>
+            </div>
+            
+            <div class="blog-card">
+                <div class="blog-image">🔬</div>
+                <div class="blog-content">
+                    <div class="blog-date">December 18, 2024</div>
+                    <h3 class="blog-title">Research Breakthrough in Hazardous Waste Detection</h3>
+                    <p class="blog-excerpt">Latest advancements in computer vision for identifying and safely handling hazardous materials in waste streams.</p>
+                    <a href="/blog-single" class="read-more">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
