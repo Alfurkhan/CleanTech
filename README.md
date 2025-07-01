@@ -208,11 +208,8 @@ License & Credits
 🎓 Built using open-source technologies and frameworks.
 🌱 Developed to promote sustainable waste management practices.
 
-Contact & Support
+Support
 -----------------
-📧 For questions, issues, or contributions, please use the Replit
-   project discussion features or create issues in the project repository.
-
 🌟 Thank you for using CleanTech AI Waste Management System!
    Together, we can make waste sorting smarter and more sustainable.
 
