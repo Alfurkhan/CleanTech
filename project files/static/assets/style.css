@@ -1,0 +1,296 @@
+/* CleanTech Waste Management - Custom Styles */
+
+:root {
+  --primary-color: #2c5530;
+  --secondary-color: #4a7c59;
+  --accent-color: #8fbc8f;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+}
+
+/* Custom styling to complement Bootstrap dark theme */
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header and Navigation */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 4rem 0;
+  position: relative;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* File Upload Area */
+.upload-area {
+  border: 3px dashed var(--bs-border-color);
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-area:hover {
+  border-color: var(--bs-primary);
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+.upload-area.dragover {
+  border-color: var(--bs-success);
+  background-color: var(--bs-success-bg-subtle);
+}
+
+.upload-icon {
+  font-size: 3rem;
+  color: var(--bs-secondary);
+  margin-bottom: 1rem;
+}
+
+/* Prediction Results */
+.prediction-result {
+  background: var(--bs-body-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.confidence-bar {
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.class-biodegradable .confidence-bar {
+  background: linear-gradient(90deg, var(--success-color), #90ee90);
+}
+
+.class-recyclable .confidence-bar {
+  background: linear-gradient(90deg, var(--info-color), #87ceeb);
+}
+
+.class-trash .confidence-bar {
+  background: linear-gradient(90deg, var(--danger-color), #ff7f7f);
+}
+
+/* Image Preview */
+.image-preview {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Cards */
+.feature-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Process Steps */
+.process-step {
+  position: relative;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.process-step-number {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+
+/* Blog Cards */
+.blog-card {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.blog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Portfolio Grid */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(44, 85, 48, 0.9);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+
+.spinner-border-lg {
+  width: 4rem;
+  height: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .upload-area {
+    padding: 2rem;
+    min-height: 200px;
+  }
+  
+  .upload-icon {
+    font-size: 2rem;
+  }
+  
+  .process-step-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Alert Styles */
+.alert-prediction {
+  border-left: 4px solid var(--bs-primary);
+  background: var(--bs-primary-bg-subtle);
+}
+
+/* Footer */
+.footer {
+  background: var(--bs-dark);
+  color: var(--bs-light);
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+}
+
+.footer h5 {
+  color: var(--bs-white);
+  margin-bottom: 1rem;
+}
+
+.footer a {
+  color: var(--bs-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--bs-white);
+}
+
+/* Utility Classes */
+.text-gradient {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.shadow-soft {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.border-radius-lg {
+  border-radius: 1rem;
+}
+
+.border-radius-xl {
+  border-radius: 1.5rem;
+}
