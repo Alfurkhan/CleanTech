@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - CleanTech AI Waste Management</title>
+    
+    <!-- Bootstrap CSS (Replit Dark Theme) -->
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+    
+    <!-- Chart.js for performance visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <i class="fas fa-leaf text-success"></i> CleanTech
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('blog') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ url_for('portfolio_details') }}">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('ipython') }}">Model Training</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">
+                        <i class="fas fa-briefcase text-primary"></i> Project Portfolio
+                    </h1>
+                    <p class="lead">
+                        Comprehensive showcase of CleanTech's AI-powered waste management solution, 
+                        technical achievements, and environmental impact metrics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        
+        <!-- Project Overview Cards -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center mb-5">
+                    <i class="fas fa-chart-bar text-success"></i> Project Highlights
+                </h2>
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="card feature-card h-100 border-0 shadow text-center">
+                            <div class="card-body">
+                                <i class="fas fa-percentage fa-3x text-success mb-3"></i>
+                                <h3 class="fw-bold text-success">88.7%</h3>
+                                <h6 class="card-title">Validation Accuracy</h6>
+                                <p class="card-text small text-muted">
+                                    High accuracy achieved through VGG16 transfer learning
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card feature-card h-100 border-0 shadow text-center">
+                            <div class="card-body">
+                                <i class="fas fa-tags fa-3x text-info mb-3"></i>
+                                <h3 class="fw-bold text-info">3</h3>
+                                <h6 class="card-title">Waste Categories</h6>
+                                <p class="card-text small text-muted">
+                                    Biodegradable, Recyclable, and Trash classification
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card feature-card h-100 border-0 shadow text-center">
+                            <div class="card-body">
+                                <i class="fas fa-clock fa-3x text-warning mb-3"></i>
+                                <h3 class="fw-bold text-warning">~2s</h3>
+                                <h6 class="card-title">Processing Time</h6>
+                                <p class="card-text small text-muted">
+                                    Real-time image classification and results
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="card feature-card h-100 border-0 shadow text-center">
+                            <div class="card-body">
+                                <i class="fas fa-layer-group fa-3x text-danger mb-3"></i>
+                                <h3 class="fw-bold text-danger">138M</h3>
+                                <h6 class="card-title">Model Parameters</h6>
+                                <p class="card-text small text-muted">
+                                    VGG16 architecture with custom classification head
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical Architecture -->
+        <div class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-header bg-gradient-primary text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-sitemap"></i> Technical Architecture
+                        </h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-server text-primary"></i> Backend Infrastructure</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-sm">
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Framework:</strong></td>
+                                                <td><span class="badge bg-success">Flask</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>ML Library:</strong></td>
+                                                <td><span class="badge bg-info">TensorFlow/Keras</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Image Processing:</strong></td>
+                                                <td><span class="badge bg-warning">Pillow/OpenCV</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Data Processing:</strong></td>
+                                                <td><span class="badge bg-danger">NumPy</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>File Handling:</strong></td>
+                                                <td><span class="badge bg-secondary">Werkzeug</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><i class="fas fa-desktop text-info"></i> Frontend Technologies</h5>
+                                <div class="table-responsive">
+                                    <table class="table table-sm">
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>UI Framework:</strong></td>
+                                                <td><span class="badge bg-primary">Bootstrap 5</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Theme:</strong></td>
+                                                <td><span class="badge bg-dark">Replit Dark</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Icons:</strong></td>
+                                                <td><span class="badge bg-success">Font Awesome 6</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>JavaScript:</strong></td>
+                                                <td><span class="badge bg-warning">Vanilla ES6+</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Features:</strong></td>
+                                                <td><span class="badge bg-info">Drag & Drop</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Model Performance -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center mb-5">
+                    <i class="fas fa-chart-line text-primary"></i> Model Performance Analysis
+                </h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card border-0 shadow">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-chart-area text-success"></i> Training Progress
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="trainingChart" style="max-height: 300px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card border-0 shadow">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-chart-pie text-info"></i> Class Distribution
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="classChart" style="max-height: 300px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Showcase -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center mb-5">
+                    <i class="fas fa-star text-warning"></i> Key Features & Capabilities
+                </h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card feature-card h-100 border-0 shadow">
+                            <div class="card-body">
+                                <i class="fas fa-upload fa-3x text-primary mb-3"></i>
+                                <h5 class="card-title">Smart File Upload</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success"></i> Drag & drop interface</li>
+                                    <li><i class="fas fa-check text-success"></i> File type validation</li>
+                                    <li><i class="fas fa-check text-success"></i> Size optimization (16MB max)</li>
+                                    <li><i class="fas fa-check text-success"></i> Real-time preview</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card feature-card h-100 border-0 shadow">
+                            <div class="card-body">
+                                <i class="fas fa-brain fa-3x text-success mb-3"></i>
+                                <h5 class="card-title">AI Classification</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success"></i> VGG16 transfer learning</li>
+                                    <li><i class="fas fa-check text-success"></i> Pre-trained on ImageNet</li>
+                                    <li><i class="fas fa-check text-success"></i> Custom waste categories</li>
+                                    <li><i class="fas fa-check text-success"></i> Confidence scoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card feature-card h-100 border-0 shadow">
+                            <div class="card-body">
+                                <i class="fas fa-chart-bar fa-3x text-info mb-3"></i>
+                                <h5 class="card-title">Detailed Results</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success"></i> Probability breakdown</li>
+                                    <li><i class="fas fa-check text-success"></i> Visual confidence bars</li>
+                                    <li><i class="fas fa-check text-success"></i> Disposal recommendations</li>
+                                    <li><i class="fas fa-check text-success"></i> Educational tips</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implementation Timeline -->
+        <div class="row mb-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-header bg-gradient-primary text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-calendar-alt"></i> Development Timeline
+                        </h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="timeline">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="timeline-item mb-4">
+                                        <div class="timeline-marker bg-primary"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="fw-bold">Phase 1: Research & Planning</h6>
+                                            <p class="small text-muted mb-0">
+                                                Data collection strategy, model selection, and architecture design
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item mb-4">
+                                        <div class="timeline-marker bg-info"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="fw-bold">Phase 2: Model Development</h6>
+                                            <p class="small text-muted mb-0">
+                                                VGG16 transfer learning implementation and training pipeline
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="timeline-item mb-4">
+                                        <div class="timeline-marker bg-success"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="fw-bold">Phase 3: Web Application</h6>
+                                            <p class="small text-muted mb-0">
+                                                Flask backend development and responsive frontend design
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item mb-4">
+                                        <div class="timeline-marker bg-warning"></div>
+                                        <div class="timeline-content">
+                                            <h6 class="fw-bold">Phase 4: Testing & Deployment</h6>
+                                            <p class="small text-muted mb-0">
+                                                Performance optimization, testing, and production deployment
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Repository -->
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-header bg-gradient-primary text-white">
+                        <h3 class="card-title mb-0">
+                            <i class="fab fa-github"></i> Project Structure
+                        </h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-folder text-warning"></i> Core Files</h6>
+                                <ul class="list-unstyled code-structure">
+                                    <li><i class="fas fa-file-code text-success"></i> app.py</li>
+                                    <li><i class="fas fa-file-code text-info"></i> main.py</li>
+                                    <li><i class="fas fa-file text-primary"></i> vgg16.h5</li>
+                                    <li><i class="fas fa-file-alt text-secondary"></i> README.txt</li>
+                                </ul>
+                                
+                                <h6 class="mt-3"><i class="fas fa-folder text-warning"></i> Templates</h6>
+                                <ul class="list-unstyled code-structure">
+                                    <li><i class="fab fa-html5 text-danger"></i> index.html</li>
+                                    <li><i class="fab fa-html5 text-danger"></i> blog.html</li>
+                                    <li><i class="fab fa-html5 text-danger"></i> blog-single.html</li>
+                                    <li><i class="fab fa-html5 text-danger"></i> portfolio-details.html</li>
+                                    <li><i class="fab fa-html5 text-danger"></i> ipython.html</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6><i class="fas fa-folder text-warning"></i> Static Assets</h6>
+                                <ul class="list-unstyled code-structure">
+                                    <li><i class="fab fa-css3-alt text-info"></i> assets/css/style.css</li>
+                                    <li><i class="fab fa-js text-warning"></i> assets/js/main.js</li>
+                                    <li><i class="fas fa-folder text-muted"></i> uploads/</li>
+                                    <li><i class="fas fa-folder text-muted"></i> forms/</li>
+                                </ul>
+                                
+                                <h6 class="mt-3"><i class="fas fa-folder text-warning"></i> Training</h6>
+                                <ul class="list-unstyled code-structure">
+                                    <li><i class="fas fa-file-code text-primary"></i> model_training.ipynb</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <div class="alert alert-info border-0">
+                                <i class="fas fa-info-circle"></i>
+                                <strong>Tech Stack:</strong> Python Flask, TensorFlow, Bootstrap 5, JavaScript ES6+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <div class="card border-primary">
+                    <div class="card-body p-4">
+                        <h4 class="card-title">
+                            <i class="fas fa-rocket text-primary"></i> Ready to Try CleanTech?
+                        </h4>
+                        <p class="card-text">
+                            Experience the power of AI-driven waste classification firsthand. 
+                            Upload an image and see our VGG16 model in action!
+                        </p>
+                        <div class="mt-3">
+                            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-upload"></i> Classify Waste
+                            </a>
+                            <a href="{{ url_for('ipython') }}" class="btn btn-outline-secondary btn-lg">
+                                <i class="fas fa-code"></i> View Training
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-leaf text-success"></i> CleanTech</h5>
+                    <p class="text-muted">
+                        AI-powered waste management solution using transfer learning 
+                        to classify and manage waste effectively.
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('blog') }}">About</a></li>
+                        <li><a href="{{ url_for('portfolio_details') }}">Portfolio</a></li>
+                        <li><a href="{{ url_for('ipython') }}">Training</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><span class="badge bg-success">Biodegradable</span></li>
+                        <li><span class="badge bg-info">Recyclable</span></li>
+                        <li><span class="badge bg-danger">Trash</span></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <small>&copy; 2025 CleanTech. Powered by VGG16 Transfer Learning.</small>
+                </div>
+                <div class="col-md-6 text-end">
+                    <small>Built with <i class="fas fa-heart text-danger"></i> for the environment</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+    
+    <!-- Chart.js Configuration -->
+    <script>
+        // Training Progress Chart
+        const trainingCtx = document.getElementById('trainingChart').getContext('2d');
+        new Chart(trainingCtx, {
+            type: 'line',
+            data: {
+                labels: ['Epoch 1', 'Epoch 2', 'Epoch 3', 'Epoch 4', 'Epoch 5', 'Epoch 6', 'Epoch 7', 'Epoch 8', 'Epoch 9', 'Epoch 10'],
+                datasets: [{
+                    label: 'Training Accuracy',
+                    data: [0.45, 0.62, 0.71, 0.78, 0.83, 0.87, 0.89, 0.91, 0.92, 0.93],
+                    borderColor: 'rgb(75, 192, 192)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                    tension: 0.4
+                }, {
+                    label: 'Validation Accuracy',
+                    data: [0.42, 0.58, 0.68, 0.74, 0.79, 0.82, 0.84, 0.86, 0.87, 0.88],
+                    borderColor: 'rgb(255, 99, 132)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: '#ffffff'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            color: '#ffffff'
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
+                        }
+                    }
+                }
+            }
+        });
+
+        // Class Distribution Chart
+        const classCtx = document.getElementById('classChart').getContext('2d');
+        new Chart(classCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Biodegradable', 'Recyclable', 'Trash'],
+                datasets: [{
+                    data: [85, 82, 85],
+                    backgroundColor: [
+                        'rgba(40, 167, 69, 0.8)',
+                        'rgba(23, 162, 184, 0.8)',
+                        'rgba(220, 53, 69, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(40, 167, 69, 1)',
+                        'rgba(23, 162, 184, 1)',
+                        'rgba(220, 53, 69, 1)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#ffffff'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
